@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
-import { AiOutlineSearch } from 'react-icons/ai'
-import {AiFillHome} from 'react-icons/ai'
-import {FaUserFriends,FaUserCircle, FaHome} from 'react-icons/fa'
-import {BsFillBagFill} from 'react-icons/bs'
-import {MdMessage} from 'react-icons/md'
-import {MdNotifications} from 'react-icons/md'
-import {GrApps} from 'react-icons/gr'
+import HomeIcon from '@mui/icons-material/Home';
+import GroupIcon from '@mui/icons-material/Group';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import MessageIcon from '@mui/icons-material/Message';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AppsIcon from '@mui/icons-material/Apps';
+import SearchIcon from '@mui/icons-material/Search';
 import HeaderLink from './HeaderLink'
 import ModeContext from '../context/ModeContext'
 import { motion } from 'framer-motion'
@@ -25,7 +26,7 @@ const Header = () => {
         <div className='flex items-center space-x-2 w-full max-w-xs'>
             {darkMode ? <img src="/linkedin-white.png" className='h-12 w-12' /> : <img src="/linkedin.png" className='h-12 w-14 rounded-lg' />}
         <div className={`flex items-center space-x-1  py-2.5 px-4 rounded w-full ${darkMode && "md:bg-gray-700"}`}>
-            <AiOutlineSearch color={darkMode && 'white'}/>
+            <SearchIcon className={darkMode ? 'text-white' : 'text-black'}/>
             <input 
             type="text" 
             placeholder="Search" 
@@ -34,16 +35,16 @@ const Header = () => {
         </div>
 
         <div className="flex items-center space-x-6" feed avatar hidden >
-            <HeaderLink Icon={FaHome} text="Home" feed active/>
-            <HeaderLink Icon={FaUserFriends} text="My Network" feed/>
-            <HeaderLink Icon={BsFillBagFill} text="Jobs" feed avatar hidden/>
-            <HeaderLink Icon={MdMessage} text="Messaging" feed />
-            <HeaderLink Icon={MdNotifications} text="Notifications" feed />
-            <HeaderLink Icon={FaUserCircle} text="Me" feed avatar hidden/>
-            <HeaderLink Icon={GrApps} text="Work" feed hidden invert/>
+            <HeaderLink Icon={HomeIcon} text="Home" feed active/>
+            <HeaderLink Icon={GroupIcon} text="My Network" feed/>
+            <HeaderLink Icon={BusinessCenterIcon} text="Jobs" feed avatar hidden/>
+            <HeaderLink Icon={MessageIcon} text="Messaging" feed />
+            <HeaderLink Icon={NotificationsIcon} text="Notifications" feed />
+            <HeaderLink Icon={AccountCircleIcon} text="Me" feed avatar hidden/>
+            <HeaderLink Icon={AppsIcon} text="Work" feed hidden />
         
         <div
-        className={`bg-gray-600 flex items-center px-0.5 rounded-full h-6 w-12 cursor-pointer flex-shrink-0 relative  ${!darkMode ? 'justify-start' : 'justify-end'}`}
+        className={`bg-gray-600 flex items-center px-0.5 rounded-full h-6 w-12 cursor-pointer flex-shrink-0 relative  ${darkMode ? 'justify-start' : 'justify-end'}`}
         onClick={()=>setDarkMode(!darkMode)}
         >
             <span className='absolute right-0.5'>🌜</span>

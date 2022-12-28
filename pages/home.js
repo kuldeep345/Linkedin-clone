@@ -1,13 +1,13 @@
 import Image from "next/image"
 import HeaderLink from "../components/HeaderLink"
-import { FaCompass } from 'react-icons/fa'
-import { HiUsers } from 'react-icons/hi'
-import { CiYoutube } from 'react-icons/ci'
-import { BsFillBagFill } from 'react-icons/bs'
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import Head from "next/head"
 import Link from "next/link"
+import ExploreIcon from '@mui/icons-material/Explore';
+import GroupIcon from '@mui/icons-material/Group';
+import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import { getProviders , signIn } from 'next-auth/react'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 function Home({providers}) {  
   return (
@@ -24,10 +24,10 @@ function Home({providers}) {
             </div>
             <div className="flex items-center sm:divide-x divide-gray-300">  
                 <div className="hidden sm:flex space-x-8 pr-4">
-                  <HeaderLink Icon={FaCompass} text="Discover"/> 
-                  <HeaderLink Icon={HiUsers} text="People"/> 
-                  <HeaderLink Icon={CiYoutube} text="Learning"/> 
-                  <HeaderLink Icon={BsFillBagFill} text="Jobs"/> 
+                  <HeaderLink Icon={ExploreIcon} text="Discover"/> 
+                  <HeaderLink Icon={GroupIcon} text="People"/> 
+                  <HeaderLink Icon={OndemandVideoIcon} text="Learning"/> 
+                  <HeaderLink Icon={BusinessCenterIcon} text="Jobs"/> 
               </div>
             { 
               Object.values(providers).map((provider) => (
@@ -47,15 +47,15 @@ function Home({providers}) {
           <div className="space-y-4">
             <div className="intent">
               <h2 className="text-xl">Search for a job</h2>
-              <MdOutlineKeyboardArrowRight className="text-gray-700 text-3xl"/>
+               <ArrowForwardIosIcon className="text-gray-700 text-3xl"/> 
             </div>
             <div className="intent">
               <h2 className="text-xl">Find a person you know</h2>
-              <MdOutlineKeyboardArrowRight className="text-gray-700 text-3xl"/>
+               <ArrowForwardIosIcon className="text-gray-700 text-3xl"/> 
             </div>
             <div className="intent">
               <h2 className="text-xl">Learn a new skill</h2>
-              <MdOutlineKeyboardArrowRight className="text-gray-700 text-3xl"/>
+              <ArrowForwardIosIcon className="text-gray-700 text-3xl"/> 
             </div>
           </div>
         </div>
