@@ -10,6 +10,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import HeaderLink from './HeaderLink'
 import ModeContext from '../context/ModeContext'
 import { motion } from 'framer-motion'
+import { useSession } from 'next-auth/react'
 
 const spring = {
   type:'spring',
@@ -20,6 +21,7 @@ const spring = {
 const Header = () => {
 
   const { darkMode , setDarkMode } = useContext(ModeContext)
+  const { data : session} = useSession()
 
   return (
     <header className={`sticky top-0 z-40 bg-white ${darkMode && "bg-[#1D2226]"} flex items-center justify-around py-1.5 px-3 focus-within:shadow-lg`}>
@@ -34,13 +36,13 @@ const Header = () => {
         </div>
         </div>
 
-        <div className="flex items-center space-x-6" feed avatar hidden >
+        <div className="flex items-center space-x-6" feed hidden >
             <HeaderLink Icon={HomeIcon} text="Home" feed active/>
             <HeaderLink Icon={GroupIcon} text="My Network" feed/>
-            <HeaderLink Icon={BusinessCenterIcon} text="Jobs" feed avatar hidden/>
+            <HeaderLink Icon={BusinessCenterIcon} text="Jobs" feed hidden/>
             <HeaderLink Icon={MessageIcon} text="Messaging" feed />
             <HeaderLink Icon={NotificationsIcon} text="Notifications" feed />
-            <HeaderLink Icon={AccountCircleIcon} text="Me" feed avatar hidden/>
+            <HeaderLink Icon={AccountCircleIcon} text="Me" feed avatar={session ? true : false} hidden/>
             <HeaderLink Icon={AppsIcon} text="Work" feed hidden />
         
         <div

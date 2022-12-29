@@ -15,7 +15,7 @@ const Sidebar = () => {
                 <img src='https://images.fastcompany.net/image/upload/w_596,c_limit,q_auto:best,f_auto/wp-cms/uploads/2021/03/LinkedIn-Default-Background-2020-.jpg' className="h-14 w-full"/>
             </div>
             <Avatar src={session?.user?.image} alt="" 
-            className='h-16  w-16 absolute border-2 top-[6%] cursor-pointer'
+            className='h-16 w-16 absolute border-2 top-5 cursor-pointer'
             />
         
         <div className={`${darkMode ? 'bg-[#1D2226] border-none' : 'bg-white'} mt-6 py-4 px-4 space-x-0.5`}>
