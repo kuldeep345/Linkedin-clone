@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil'
 import Input from './Input'
 import {handlePostState , useSSRPostsState} from '../atoms/postAtom'
 import Post from './Post'
+import { API_BASE_URL } from '../config'
 
 const Feed = ({posts}) => {
 
@@ -12,7 +13,7 @@ const Feed = ({posts}) => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("/api/post" , {
+      const response = await fetch(`${API_BASE_URL}/api/post` , {
         method:"GET",
         headers: { 'Content-type' : 'application/json' }
       })
