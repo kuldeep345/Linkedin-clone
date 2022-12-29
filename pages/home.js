@@ -15,7 +15,7 @@ function Home({providers}) {
       
       <Head>
         <title>LinkedIn</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
         <header className="flex justify-around items-center py-4">

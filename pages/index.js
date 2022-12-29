@@ -17,8 +17,6 @@ export default function Home({posts , articles}) {
   const router = useRouter()
   const {darkMode} = useContext(ModeContext)
 
-  console.log(articles)
-
   const [modalOpen , setModalOpen] = useRecoilState(modalState)
   const [modalType , setModalType] = useRecoilState(modalTypeState)
 
@@ -33,7 +31,7 @@ export default function Home({posts , articles}) {
     <div className={` ${darkMode ? 'bg-black text-white' :'bg-[#F3F2EF]'} h-screen overflow-y-scroll md:space-y-6`}>
       <Head>
         <title>Feed | LinkedIn</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
     <Header/>

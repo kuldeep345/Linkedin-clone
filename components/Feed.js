@@ -25,8 +25,6 @@ const Feed = ({posts}) => {
     fetchPosts()
   }, [handlePost])
   
-  console.log(useSSRPosts)
-  
   return (
     <div className='space-y-6 pb-26 max-w-lg'>
         <Input/>
