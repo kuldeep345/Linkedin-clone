@@ -13,7 +13,6 @@ import ThumbUpOffAltRoundedIcon from '@mui/icons-material/ThumbUpOffAltRounded'
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined'
 import { useSession } from 'next-auth/react'
 import TimeAgo from 'timeago-react'
-import { API_BASE_URL } from '../config'
 
 const Post = ({ post , modalPost }) => {
   const { data : session } = useSession()
@@ -28,7 +27,7 @@ const Post = ({ post , modalPost }) => {
   const truncate = (string , n) => string?.length > n ? string.substr(0 , n - 1) +  "...see more" : string;
 
   const deletePost = async()=>{
-    const response = await fetch(`${API_BASE_URL}/api/post/${post._id}` , {
+    const response = await fetch(`/api/posts/${post._id}` , {
       method:"DELETE",
       headers:{"Content-Type":"application/json"}
     })

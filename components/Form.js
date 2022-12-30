@@ -4,7 +4,6 @@ import { useRecoilState } from 'recoil'
 import { modalState } from '../atoms/modalAtom'
 import { useSession } from 'next-auth/react'
 import { handlePostState } from '../atoms/postAtom'
-import { API_BASE_URL } from '../config'
 
 const Form = () => {
   const { darkMode } = useContext(ModeContext)
@@ -17,7 +16,7 @@ const Form = () => {
   const uploadPost = async(e)=>{
     e.preventDefault()
 
-    const response = await fetch(`${API_BASE_URL}/api/post` , {
+    const response = await fetch("/api/post", {
       method:"POST",
       body:JSON.stringify({
         input:input,
