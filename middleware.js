@@ -10,6 +10,6 @@ export async function middleware(req) {
             secureCookie: process.env.NODE_ENV === "production"
         });
 
-        if(!session) return NextResponse.redirect(`${process.env.BASE_URL}/home`)
+        if(!session) NextResponse.rewrite(new URL('/home', req.url))
     }
 }
